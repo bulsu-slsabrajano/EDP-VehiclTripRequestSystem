@@ -91,6 +91,7 @@ public class AssignmentPanel extends VBox {
         getChildren().addAll(title, tableSection, detailCard);
     }
 
+    
     private void loadFromDb() {
         try {
             DbConnectMsSql db = new DbConnectMsSql();
