@@ -2,8 +2,15 @@ package com.driver.panel;
 
 import com.project.dbConnection.DbConnectMsSql;
 import com.project.util.CardPane;
-
-
+import com.project.util.FxUtil;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 
 import java.sql.PreparedStatement;
 
@@ -117,3 +124,35 @@ public class DriverUI extends BorderPane {
         setCenter(contentPane);
         setActiveNav(0);
     }
+
+    public void loadAllData() {
+        homePanel.loadData();
+        assignmentPanel.loadData();
+        vehiclePanel.loadData();
+        TripPanel.refreshTrips();
+        ratingPanel.loadData();
+        profilePanel.loadProfile(DriverData.driverId);
+    }
+
+    private void setActiveNav(int activeIdx) {
+        for (int i = 0; i < navButtons.length; i++) {
+            navButtons[i].getStyleClass().removeAll("topnav-btn-active");
+            if (i == activeIdx) navButtons[i].getStyleClass().add("topnav-btn-active");
+        }
+    }
+
+    private void clearActiveNav() {
+        for (Button b : navButtons) b.getStyleClass().remove("topnav-btn-active");
+    }
+
+    private void insertAuditLog(int userId, String status) {
+        try {
+            DbConnectMsSql db = new DbConnectMsSql();
+            PreparedStatement ps = db.conn.prepareStatement(
+                "INSERT INTO Audit_Log (user_id, log_status) VALUES (?, ?)");
+            ps.setInt(1, userId);
+            ps.setString(2, status);
+            ps.executeUpdate();
+        } catch (Exception e) { e.printStackTrace(); }
+    }
+}
