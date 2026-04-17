@@ -138,5 +138,9 @@ Steps to Install the System:
 
 **7. Run the Project**
 
+•Right-click the main class
+
+•Select Run As → Java Application
+
 •The EduTrip system should now run
 
