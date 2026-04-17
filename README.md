@@ -6,15 +6,18 @@ EduTrip is a Vehicle Trip Request System designed for institutions to manage tra
 
 The purpose of EduTrip is to replace manual and paper-based trip requests with a digital solution that improves organization, tracking, and communication. It ensures that trip scheduling becomes faster, more accurate, and easier to manage.
 
+
 **Features**
 
 The system includes several core features that make it functional and user-friendly:
+
 
 **Login UI**
 
 •Users can securely log in using their credentials.
 
 •Role-based access determines whether the user is an Admin, Passenger, or Driver.
+
 
 **Admin UI (Administrator Role)**
 
@@ -26,6 +29,7 @@ The system includes several core features that make it functional and user-frien
 
 •Monitor and manage trip requests
 
+
 **Passenger UI (Passenger Role)**
 
 •Request or reserve vehicle trips
@@ -33,6 +37,7 @@ The system includes several core features that make it functional and user-frien
 •View request status
 
 •Update personal profile
+
 
 **Driver UI (Driver Role)**
 
@@ -42,9 +47,11 @@ The system includes several core features that make it functional and user-frien
 
 •Update profile information
 
+
 **User Profile Management**
 
 •All users can edit and update their personal information
+
 
 **Technologies Used**
 
@@ -59,6 +66,7 @@ The system was developed using the following technologies:
 **•JDBC (Java Database Connectivity)** – Used to connect the Java application to MSSQL and execute database queries
 
 **•Eclipse IDE** – Used as the development environment
+
 
 **Setup Installation Guide**
 
@@ -76,6 +84,7 @@ Steps to Install the System:
 
 •JavaFX SDK
 
+
 **2. Set Up the Database**
 
 •Open SSMS
@@ -83,6 +92,7 @@ Steps to Install the System:
 •Create a new database (e.g., EduTripDB)
 
 •Import the provided .sql file
+
 
 **3. Add JDBC Driver**
 
@@ -96,6 +106,7 @@ Steps to Install the System:
 
 •Select the downloaded JDBC .jar file
 
+
 **4. Configure Database Connection**
 
 •Open the connection class (e.g., DbConnectMsSql.java)
@@ -108,6 +119,7 @@ Steps to Install the System:
 
   String password = "your_password";
 
+
 **5. Add JavaFX Library**
 
 •Right-click project → Properties
@@ -116,11 +128,13 @@ Steps to Install the System:
 
 •Add JavaFX SDK (lib folder)
 
+
 **6. Configure VM Options**
 
 •Open Run Configurations
 
 •Add: --module-path "path_to_javafx_lib" --add-modules javafx.controls,javafx.fxml
+
 
 **7. Run the Project**
 
